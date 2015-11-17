@@ -1,8 +1,5 @@
-function isEven(val) {
-    return val % 2 === 0
-}
-
 test('isEven()', function(assert) {
+    assert.ok(typeof isEven === 'function', 'The type should be a function');
     assert.ok(isEven(0), 'Zero is an even number');
     assert.ok(isEven(2), 'So is two');
     assert.ok(isEven(-4), 'So is negative four');
@@ -10,6 +7,10 @@ test('isEven()', function(assert) {
     assert.ok(!isEven(-7), 'Neither is negative seven');
     // Fails
     //ok(isEven(3), 'Three is an even number');
+});
+//this does not work with type comparison
+test("Not Equal", function(assert) {
+    assert.notEqual(1, "2", "Int VS String");
 });
 /**
  * Equal uses == so object and type comparison will fail.
